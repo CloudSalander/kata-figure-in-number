@@ -1,0 +1,1 @@
+# kata-figure-in-number
