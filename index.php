@@ -11,15 +11,20 @@ function isFigureInNumber(int $number, int $figure): bool {
     return false;
 }
 
-$number = 1;
-$figure = 1;
+$number = readline("Introdueix un nombre ");
+$figure = readline("Introdueix la xifra a buscar ");
+//TODO: Think what could be wrong with that input. Not a number, figure bigger than 9...
+while($number != "" && $figure != "") {
+    $msg = "La xifra ".$figure;
+    if(!isFigureInNumber($number,$figure)) {
+        $msg .= " NO";
+    }
+    $msg .= " existeix dins del nombre ".$number;
+    echo $msg.PHP_EOL;
 
-$msg = "La xifra ".$figure;
-if(!isFigureInNumber($number,$figure)) {
-    $msg .= " NO";
+    $number = readline("Introdueix un nombre ");    
+    $figure = readline("Introdueix la xifra a buscar ");
 }
-$msg .= " existeix dins del nombre ".$number;
 
-echo $msg.PHP_EOL;
 
 ?>
